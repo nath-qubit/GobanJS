@@ -36,4 +36,10 @@ describe("isTaken", () => {
   test("Select position 2, 2 is empty", () => {
     expect(isTaken(2, 2)).toBe("Position empty - choose another");
   });
+
+  it("should handle boards that are larger than 3x3", () => {
+      expect(isTaken(5, 0)).toBe(true);
+      expect(isTaken(5, 5)).toBe(true);
+      expect(isTaken(0, 5)).toBe(false);
+  });
 });
